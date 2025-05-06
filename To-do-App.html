@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timed To-Do App</title>
+  <link rel="stylesheet" href="To-do-app.css">
+</head>
+<body>
+  <h1>Timed To-Do App</h1>
+
+
+
+  <div class="input-section">
+    <h3>Add a Task</h3>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <div class="time-inputs">
+      <input type="number" id="hoursInput" placeholder="Hours" min="0">
+      <input type="number" id="minutesInput" placeholder="Minutes" min="0">
+      <input type="number" id="secondsInput" placeholder="Seconds" min="0" max="59">
+    </div>
+    <button id="addTaskBtn">Add Task</button>
+
+    <h3>Or Choose an In-Built Task</h3>
+    <select id="inbuiltTaskSelect">
+      <option value="">Select a task...</option>
+
+
+    </select>
+    <button id="addInbuiltTaskBtn">Add Selected Task</button>
+  </div>
+
+
+  <div id="timerDisplay" class="timer-display" style="display: none;">
+    <div class="timer-content">
+      <h2 id="currentTask">Task: Loading...</h2>
+      <div class="timer-wrapper">
+        <canvas id="timerCircle" width="150" height="150"></canvas>
+        <div class="timer-text">
+          <span id="timerStatus">Time Left:</span> 
+          <div><span id="timer">00:00:00</span>
+          </div>
+        </div>
+      </div>
+      <div class="timer-buttons">
+        <button id="stopTimerBtn">Stop Timer</button>
+        <button id="stopAlarmBtn" style="display: none;">Stop Alarm</button>
+      </div>
+    </div>
+  </div>
+
+  <ul id="taskList"></ul>
+
+
+  <audio id="alarmSound" src="/Assets/mixkit-digital-clock-digital-alarm-buzzer-992.wav" loop></audio>
+
+  <script src="To-do-app.js"></script>
+</body>
+</html>
